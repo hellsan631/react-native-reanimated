@@ -2,13 +2,7 @@ require "json"
 
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
-reactVersion = '0.0.0'
-
-begin
-  reactVersion = JSON.parse(File.read(File.join(__dir__, "..", "react-native", "package.json")))["version"]
-rescue
-  reactVersion = '0.64.0'
-end
+reactVersion = '0.62.2'
 
 rnVersion = reactVersion.split('.')[1]
 
@@ -85,12 +79,7 @@ Pod::Spec.new do |s|
   s.dependency 'Yoga'
   s.dependency 'DoubleConversion'
   s.dependency 'glog'
-
-  if reactVersion.match(/^0.62/)
-    s.dependency 'ReactCommon/callinvoker'
-  else
-    s.dependency 'React-callinvoker'
-  end
+  s.dependency 'ReactCommon/callinvoker'
 
   s.dependency "#{folly_prefix}Folly"
 
