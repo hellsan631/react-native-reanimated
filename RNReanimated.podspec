@@ -21,15 +21,12 @@ Pod::Spec.new do |s|
   s.name         = "RNReanimated"
   s.version      = package["version"]
   s.summary      = package["description"]
-  s.description  = <<-DESC
-                  RNReanimated
-                   DESC
-  s.homepage     = "https://github.com/software-mansion/react-native-reanimated"
+  s.description  = package["description"]
+  s.homepage     = "https://github.com/hellsan631/react-native-reanimated"
   s.license      = "MIT"
-  # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author       = { "author" => "author@domain.cn" }
   s.platforms    = { :ios => "9.0", :tvos => "9.0" }
-  s.source       = { :git => "https://github.com/software-mansion/react-native-reanimated.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/hellsan631/react-native-reanimated.git", :tag => "#{s.version}" }
 
   s.source_files = [
     "ios/**/*.{mm,h,m}",
@@ -80,7 +77,6 @@ Pod::Spec.new do |s|
   s.dependency 'DoubleConversion'
   s.dependency 'glog'
   s.dependency 'ReactCommon/callinvoker'
-
   s.dependency "#{folly_prefix}Folly"
 
 end
